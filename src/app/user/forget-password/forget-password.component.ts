@@ -3,12 +3,12 @@ import { FormBuilder,FormGroup, ReactiveFormsModule, ValidatorFn, Validators, Ab
 import { Auth} from '../../shared/services/auth';
 import { ToastrService } from 'ngx-toastr';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-forget-password',
   standalone: true,
-  imports: [ ReactiveFormsModule,RouterLink ,CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './forget-password.component.html',
   styles: ``
 })

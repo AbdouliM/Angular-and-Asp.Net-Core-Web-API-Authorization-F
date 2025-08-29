@@ -3,14 +3,14 @@ import { FormBuilder,FormGroup, ReactiveFormsModule, ValidatorFn, Validators, Ab
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Auth } from '../../shared/services/auth';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { FirstKeyPipe } from '../../shared/pipes/firstkey-pipe';
 
 
 @Component({
   selector: 'app-reset-password',
-  imports: [ReactiveFormsModule,CommonModule,RouterLink,FirstKeyPipe],
+  imports: [ReactiveFormsModule, RouterLink, FirstKeyPipe],
   templateUrl: './reset-password.component.html'
 })
 export class ResetPasswordComponent implements OnInit {
