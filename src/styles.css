@@ -1,0 +1,16 @@
+body{
+      font-family: "Inter", sans-serif;
+}
+/* form validation */
+.error-feedback {
+  font-size: 0.9rem;
+  color: crimson;
+  margin: 0.3rem !important;
+  margin-top: 0.1rem !important;
+}
+.toast-top-center {
+  font-size: 12px !important; 
+  padding: 8px 12px !important; 
+  border-radius: 15px;
+
+}

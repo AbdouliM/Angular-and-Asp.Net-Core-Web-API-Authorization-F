@@ -1,0 +1,62 @@
+<div class="container mt-3" style="min-width: 350px;">
+
+<div class="mb-4">
+  <h2 class="text-success text-center">
+    Sign up
+  </h2>
+
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+<div class="mb-3">
+    <input class="form-control bg-body-secondary" 
+    placeholder="Email" formControlName="username">
+    <div class="error-feedback" *ngIf="hasDisplayableError('username')">
+      <div *ngIf="form.controls['username'].hasError('required')">
+        Please enter your email address.
+      </div><div *ngIf="form.controls['username'].hasError('username')">
+        Please enter a valid email address.
+      </div>
+    </div>
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-secondary" 
+    placeholder="Role" formControlName="role">
+    <div class="error-feedback"  *ngIf="hasDisplayableError('role') && form.controls['role'].hasError('required')">
+      Please enter your role.
+    </div>
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-secondary" type="password"
+    placeholder="Password" formControlName="password">
+    <div class="error-feedback" *ngIf="hasDisplayableError('password')">
+    <ng-container [ngSwitch]="form.controls['password'].errors | firstKey">
+        <div *ngSwitchCase="'required'">
+          Please enter your password.
+        </div>
+        <div *ngSwitchCase="'minlength'">
+          Atleast 6 characters required.
+        </div>
+        <div *ngSwitchCase="'pattern'">
+          One or more special character(s).
+        </div>
+      </ng-container>
+      </div>
+</div>
+<div class="mb-3">
+    <input class="form-control bg-body-secondary" type="password"
+    placeholder="Confirm Password" formControlName="confirmPassword">
+    <div class="error-feedback"  *ngIf="hasDisplayableError('confirmPassword') && form.controls['confirmPassword'].hasError('passwordMismatch')">
+      Passwords doesn't match .
+    </div>
+</div>
+
+<div class="mt-4">
+ <button type="submit" class="btn btn-success w-100 rounded-3">
+      Register
+    </button></div>
+      <div  class="text-center py-5">Already have an account?
+    <a routerLink="/signin" class="text-decoration-none fw-medium text-success d-inlin-block">Sign in</a>
+  </div>
+</form>
+</div>
